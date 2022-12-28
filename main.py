@@ -1,7 +1,5 @@
 import random
 
-# Terminal Version:
-
 words = ['python', 'java', 'coding', 'animal', 'hi', 'zebudderyninja69',
          "walk","act","worry","why","straight","sail",
          "meal","verb","till","fight","copper","share",
@@ -11,11 +9,11 @@ words = ['python', 'java', 'coding', 'animal', 'hi', 'zebudderyninja69',
          "wagon","way","led","star","grade","attached",
          "younger","broken","once","actual","doctor","trunk"]
 
-# randrange is inclusive :/
-# this will select the word to guess from our words list
 
 while True:
-
+    
+    # randrange is inclusive
+    # this will select the word to guess from our words list
     print('\n\nSelect from the following options:')
     choice = int(input('1. Play. 2. Exit.'))
 
@@ -23,17 +21,18 @@ while True:
         print("GAME CLOSED")
         break
     elif choice == 1:
-        # Game loop
-        # Will store and compare guesses
-        # Creates array with each letter of the word at diff index
         wordArr = []
         theWord = words[random.randrange(0, len(words))]
         guesses = ['_'] * len(theWord)
         incorrect = 0
         stopper = 0
         used = []
+
+        # Append each letter of the word to wordArr
         for x in theWord:
             wordArr.append(x)
+
+        # First instance of the game, 0 incorrec guesses
         while stopper == 0:
 
             print('------HANGMAN------')
@@ -53,7 +52,6 @@ while True:
             guess1 = guess.lower()
 
             if wordArr.count(guess1) >= 1:
-                index = 0
                 for x in range(0, len(wordArr)):
                     if wordArr[x] == guess1:
                         guesses[x] = guess1
@@ -87,7 +85,6 @@ while True:
                     guess1 = guess.lower()
 
                     if wordArr.count(guess1) >= 1:
-                        index = 0
                         for x in range(0, len(wordArr)):
                             if wordArr[x] == guess1:
                                 guesses[x] = guess1
@@ -121,7 +118,6 @@ while True:
                             guess1 = guess.lower()
 
                             if wordArr.count(guess1) >= 1:
-                                index = 0
                                 for x in range(0, len(wordArr)):
                                     if wordArr[x] == guess1:
                                         guesses[x] = guess1
@@ -155,7 +151,6 @@ while True:
                                     guess1 = guess.lower()
 
                                     if wordArr.count(guess1) >= 1:
-                                        index = 0
                                         for x in range(0, len(wordArr)):
                                             if wordArr[x] == guess1:
                                                 guesses[x] = guess1
